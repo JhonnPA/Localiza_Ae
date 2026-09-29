@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Localiza-ae</title>
+    <link rel="icon" href="/logo.svg" />
+    <script>
+      // aplica o tema antes do React carregar, senão a tela pisca clara no modo escuro.
+      // A chave "theme" é a mesma do src/hooks/useTheme.ts
+      try {
+        const savedTheme = localStorage.getItem("theme");
+        const systemPrefersDark = matchMedia("(prefers-color-scheme: dark)").matches;
+        if (savedTheme === "dark" || (!savedTheme && systemPrefersDark)) {
+          document.documentElement.classList.add("dark");
+        }
+      } catch {
+        // sem acesso ao localStorage (modo privado etc.): fica no tema claro
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

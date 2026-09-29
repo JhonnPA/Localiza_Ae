@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Cores do tema (R G B), usadas pelo tailwind.config.cjs */
+:root {
+  --color-page: 246 250 255;
+  --color-surface: 255 255 255;
+  --color-surface-muted: 243 244 246;
+  --color-content: 17 24 39;
+  --color-muted: 75 85 99;
+  --color-subtle: 107 114 128;
+  --color-line: 229 231 235;
+  --color-primary: 10 36 99;
+  --color-primary-hover: 12 47 133;
+  --color-link: 10 36 99;
+  --brand-yellow: #ffd60a;
+  --brand-dark: #0f172a;
+  color-scheme: light;
+}
+
+/* Modo escuro: a classe "dark" vai no <html> */
+.dark {
+  --color-page: 11 17 32;
+  --color-surface: 21 30 46;
+  --color-surface-muted: 30 41 59;
+  --color-content: 226 232 240;
+  --color-muted: 203 213 225;
+  --color-subtle: 148 163 184;
+  --color-line: 51 65 85;
+  --color-primary: 37 99 235;
+  --color-primary-hover: 59 130 246;
+  --color-link: 147 197 253;
+  /* deixa o calendário e o seletor de hora do navegador escuros também */
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-page text-content;
+}
+
+/* Botões */
+.btn {
+  @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-semibold transition;
+}
+
+.btn-primary {
+  @apply bg-primary text-white;
+}
+
+.btn-primary:hover {
+  background-color: rgb(var(--color-primary-hover)); /* Tom mais escuro */
+}
+
+.btn-accent {
+  background-color: var(--brand-yellow);
+  color: var(--brand-dark);
+}
+
+.btn-accent:hover {
+  background-color: #e6c000; /* Tom mais escuro */
+}
+
+/* Inputs */
+.input {
+  @apply w-full border rounded-lg px-3 py-2 outline-none focus:ring-2 bg-surface text-content;
+  --tw-ring-color: rgb(var(--color-primary));
+}
+
+.input:disabled {
+  @apply bg-surface-muted text-subtle;
+}
+
+/* Card */
+.card {
+  @apply bg-surface rounded-2xl shadow;
+}
+
+/* Badges */
+.badge {
+  @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium;
+}
+
+.badge-success {
+  @apply bg-green-100 text-green-700 dark:bg-green-900/50 dark:text-green-300;
+}
+
+.badge-danger {
+  @apply bg-red-100 text-red-700 dark:bg-red-900/50 dark:text-red-300;
+}
+
+.badge-muted {
+  @apply bg-surface-muted text-muted;
+}
+
+/* Links */
+.link {
+  @apply underline underline-offset-4 text-link;
+}
+
+/* Fundo da tela de login */
+.login-background {
+  background: radial-gradient(ellipse at top, #e6f1ff, #f6faff);
+}
+
+.dark .login-background {
+  background: radial-gradient(ellipse at top, #1e293b, #0b1120);
+}
+
+/* Gráficos (Recharts): grade e eixos seguem o tema */
+.recharts-cartesian-grid line,
+.recharts-cartesian-axis-line,
+.recharts-cartesian-axis-tick-line {
+  stroke: rgb(var(--color-line));
+}
+
+.recharts-cartesian-axis-tick-value {
+  fill: rgb(var(--color-subtle));
+}
