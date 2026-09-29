@@ -1,0 +1,5 @@
+# quebra de linha LF em todo lugar (o Prettier espera LF, mesmo no Windows)
+* text=auto eol=lf
+
+*.jpg binary
+*.png binary

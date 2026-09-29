@@ -1,0 +1,24 @@
+# dependências e build
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+
+# segredos: qualquer .env fica fora, menos o modelo
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# logs
+*.log
+npm-debug.log*
+
+# sistema e editores
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
