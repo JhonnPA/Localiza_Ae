@@ -1,0 +1,19 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: localiza-ae-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${PGDATABASE:?defina PGDATABASE no .env}
+      POSTGRES_USER: ${PGUSER:?defina PGUSER no .env}
+      POSTGRES_PASSWORD: ${PGPASSWORD:?defina PGPASSWORD no .env}
+    ports:
+      # só em 127.0.0.1, pra ninguém da rede conseguir acessar o banco
+      - "127.0.0.1:${PGPORT:-5432}:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+      # o postgres roda esses .sql só na primeira vez que cria o banco
+      - ./server/database:/docker-entrypoint-initdb.d:ro
+
+volumes:
+  db-data:
