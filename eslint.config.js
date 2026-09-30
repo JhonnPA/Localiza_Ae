@@ -16,7 +16,6 @@ export default tseslint.config(
     },
   },
 
-  // Site (React)
   {
     files: ["src/**/*.{ts,tsx}"],
     languageOptions: { globals: globals.browser },
@@ -24,7 +23,6 @@ export default tseslint.config(
     rules: reactHooks.configs.recommended.rules,
   },
 
-  // Servidor (Node) e arquivos de configuração
   {
     files: ["server/**/*.js", "shared/**/*.js", "*.{js,cjs,ts}"],
     languageOptions: { globals: globals.node },

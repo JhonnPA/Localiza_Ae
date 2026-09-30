@@ -6,7 +6,6 @@ type TemporaryPasswordModalProps = {
   onClose: () => void;
 };
 
-// a senha provisória só aparece aqui, depois de fechar não dá pra ver de novo
 export default function TemporaryPasswordModal({
   employeeName,
   password,

@@ -20,7 +20,6 @@ function loginLimiter(limit, keyGenerator) {
   });
 }
 
-// limita as tentativas de login contra força bruta: por conta (IP + email) e por IP.
 // Se for pra produção atrás de proxy, precisa do app.set("trust proxy", 1).
 export const loginRateLimiter = [
   loginLimiter(MAX_ATTEMPTS_PER_IP, (req) => ipKeyGenerator(req.ip)),

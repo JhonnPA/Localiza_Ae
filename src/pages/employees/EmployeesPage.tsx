@@ -67,7 +67,6 @@ export default function EmployeesPage() {
           <tbody>
             {accounts.map((account) => {
               const isCurrentUser = account.id === currentUser?.id;
-              // gerentes (inclusive você) não são gerenciados por aqui
               const canManage = account.role === USER_ROLE.EMPLOYEE;
               return (
                 <tr key={account.id} className="border-t">

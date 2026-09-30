@@ -59,7 +59,6 @@ clientRoutes.delete("/:id", async (req, res) => {
   const deletedClient = await deleteInactiveClient(id);
   if (deletedClient) return res.json(deletedClient);
 
-  // não apagou nada, então vê se o cliente não existe ou se está ativo
   if (!(await findClientById(id))) throw clientNotFound();
   throw new HttpError(
     HTTP_STATUS.FORBIDDEN,

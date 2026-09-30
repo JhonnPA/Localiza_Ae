@@ -27,7 +27,6 @@ export function useUserAccounts() {
     setAccounts((current) => current.map((item) => (item.id === updated.id ? updated : item)));
   };
 
-  // devolve a senha provisória gerada pela API (ela só aparece essa vez)
   const resetPassword = async (account: UserAccount) => {
     const { temporaryPassword } = await usersApi.resetPassword(account.id);
     setAccounts((current) =>

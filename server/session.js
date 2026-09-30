@@ -2,8 +2,6 @@ import jwt from "jsonwebtoken";
 
 import { config } from "./config.js";
 
-// Gera o token de login. Usado no login e depois de trocar a senha
-// (o token antigo diz que a senha ainda precisa ser trocada).
 export function createSession(user) {
   const sessionUser = {
     id: user.id,

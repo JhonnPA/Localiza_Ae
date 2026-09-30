@@ -151,7 +151,6 @@ export const useAppStore = create<AppState>((set, get) => ({
   },
 }));
 
-// troca a reserva antiga pela versão que a API devolveu
 function replaceReservation(updated: Reservation) {
   useAppStore.setState((state) => ({
     reservations: state.reservations.map((reservation) =>

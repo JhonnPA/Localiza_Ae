@@ -1,7 +1,6 @@
 import { isActive } from "./reservation";
 import type { Category, Reservation } from "./types";
 
-// disponíveis = estoque da categoria - reservas ativas dela
 export function countAvailableCarsByCategory(
   categories: Category[],
   reservations: Reservation[],

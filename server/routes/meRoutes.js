@@ -6,7 +6,6 @@ import { isCurrentPassword, updatePassword } from "../repositories/userRepositor
 import { createSession } from "../session.js";
 import { assertRequiredFields, assertValidPassword } from "../validation.js";
 
-// rotas do próprio usuário logado
 export const meRoutes = Router();
 
 meRoutes.post("/password", passwordChangeRateLimiter, async (req, res) => {

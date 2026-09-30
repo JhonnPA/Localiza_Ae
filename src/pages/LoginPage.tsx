@@ -7,7 +7,6 @@ import ThemeToggle from "../components/ThemeToggle";
 import { ROUTES } from "../routes";
 import { useAppStore } from "../store/useAppStore";
 
-// foto salva no projeto (Unsplash)
 const LOGIN_IMAGE_URL = "/login.jpg";
 
 export default function LoginPage() {

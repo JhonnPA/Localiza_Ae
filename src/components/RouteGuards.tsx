@@ -10,7 +10,6 @@ export function PrivateRoute({ children }: { children: ReactElement }) {
   const { pathname } = useLocation();
 
   if (!user) return <Navigate to={ROUTES.LOGIN} replace />;
-  // senha provisória: só libera o resto do sistema depois de trocar
   if (user.mustChangePassword && pathname !== ROUTES.CHANGE_PASSWORD) {
     return <Navigate to={ROUTES.CHANGE_PASSWORD} replace />;
   }

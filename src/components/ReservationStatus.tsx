@@ -12,7 +12,6 @@ const BADGE_BY_STATUS: Record<Status, string> = {
   [RESERVATION_STATUS.CANCELED]: "badge-danger",
 };
 
-// badge do status + Concluir (carro já retirado) ou Cancelar (ainda não retirado)
 export default function ReservationStatus({ reservation }: { reservation: Reservation }) {
   const { complete, cancel } = useReservationActions();
 
